@@ -7,25 +7,13 @@ GVHD: Trần Hoàng Lộc
 
 Nhóm: 10 
 
-```C++
-#include <stdio.h>
-#include "esp_log.h"
-#include "driver/i2c.h"
-#include "sdkconfig.h"
-#include "ssd1306.h"
-#include "font8x8_basic.h"
-#include <string.h>
-#include "cc.h"
-```
+## 1. THÔNG TIN CHUNG:
 
-## Overview
+|         Họ và tên         |    MSSV  | Email                  |
+| ------------------------- | -------- | ---------------------- |
+| Ngô Tạ Đình Phong         | 20520688 | 20520688@gm.uit.edu.vn |
+| Lê Nguyễn Quang Duy       | 20520467 | 20520467@gm.uit.edu.vn |
 
-This example demonstrates basic usage of I2C driver by running two tasks on I2C bus:
-
-1. Read external I2C sensor, here we take the BH1750 ambient light sensor (GY-30 module) for an example.
-2. Use one of the ESP device's I2C port (master mode) to read and write another I2C port (slave mode) in ESP device.
-
-If you have a new I2C application to go (for example, read the temperature data from external sensor with I2C interface), try this as a basic template, then add your own code.
 
 ## How to use example
 
