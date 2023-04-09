@@ -1,0 +1,25 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\i2c_self_test\build\bootloader\esp-idf\esptool_py && python D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c: In function 'task_ssd1306_display_image':
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:136:40: warning: passing argument 2 of 'i2c_master_write' makes pointer from integer without a cast [-Wint-conversion]
+  136 |             i2c_master_write(cmd,uit[i][j], 16, true);
+      |                                  ~~~~~~^~~
+      |                                        |
+      |                                        unsigned char
+In file included from D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:3:
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/include/driver/i2c.h:348:72: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'unsigned char'
+  348 | esp_err_t i2c_master_write(i2c_cmd_handle_t cmd_handle, const uint8_t *data, size_t data_len, bool ack_en);
+      |                                                         ~~~~~~~~~~~~~~~^~~~
+[3/7] Linking C static library esp-idf\main\libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable i2c_example.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.5
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/i2c_example.bin
+[7/7] cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\i2c_self_test\build\esp-idf\esptool_py && python D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/partition_table/partition-table.bin D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/i2c_example.bin"
+i2c_example.bin binary size 0x30fb0 bytes. Smallest app partition is 0x100000 bytes. 0xcf050 bytes (81%) free.

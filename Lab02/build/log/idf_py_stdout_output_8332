@@ -1,0 +1,184 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\i2c_self_test\build\bootloader\esp-idf\esptool_py && python D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj 
+ccache D:\Espressif\tools\xtensa-esp32-elf\esp-2022r1-11.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DUNITY_INCLUDE_CONFIG_H -ID:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/config -ID:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/newlib/platform_include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/esp_additions/include/freertos -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/esp_additions/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/include/soc -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/include/soc/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/port/esp32/. -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/port/esp32/private_include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/heap/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/log/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/esp32/. -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/hal/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/hal/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/hal/platform_port/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/port/soc -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/port/include/private -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/xtensa/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/include/apps -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/include/apps/sntp -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/lwip/src/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/port/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/port/esp32/include/arch -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_ringbuf/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/efuse/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/efuse/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/deprecated -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_pm/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/port/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/mbedtls/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/mbedtls/library -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/esp_crt_bundle/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_app_format/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/bootloader_support/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/bootloader_support/bootloader_flash/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_partition/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/app_update/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/spi_flash/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/pthread/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_timer/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/app_trace/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_event/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/nvs_flash/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_phy/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_phy/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/vfs/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_netif/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant/port/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant/esp_supplicant/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_wifi/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/unity/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/unity/unity/src -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/cmock/CMock/src -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/console -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/http_parser -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp-tls -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp-tls/esp-tls-crypto -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/interface -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/deprecated/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_eth/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub/xtensa -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hid/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/tcp_transport/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_http_client/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_http_server/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_https_ota/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_lcd/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_lcd/interface -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protobuf-c/protobuf-c -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm/include/common -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm/include/security -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm/include/transports -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_local_ctrl/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_psram/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/espcoredump/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/espcoredump/include/port/xtensa -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wear_levelling/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/sdmmc/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs/diskio -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs/vfs -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs/src -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/idf_test/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/idf_test/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/ieee802154/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/json/cJSON -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mqtt/esp-mqtt/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/perfmon/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/spiffs/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/ulp/ulp_common/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/ulp/ulp_common/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wifi_provisioning/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fmacro-prefix-map=D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test=. -fmacro-prefix-map=D:/Espressif/frameworks/esp-idf-v5.0.1=/IDF -fstrict-volatile-bitfields -Wno-error=unused-but-set-variable -fno-jump-tables -fno-tree-switch-conversion -DconfigENABLE_FREERTOS_DEBUG_OCDAWARE=1 -std=gnu17 -Wno-old-style-declaration -D_GNU_SOURCE -DIDF_VER=\"v5.0.1-dirty\" -DESP_PLATFORM -D_POSIX_READER_WRITER_LOCKS -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\i2c_example_main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj -c D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c: In function 'app_main':
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:391:12: error: unknown type name 'lv_disp_draw_buf_t'
+  391 |     static lv_disp_draw_buf_t disp_buf; // contains internal graphic buffer(s) called draw buffer(s)
+      |            ^~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:392:12: error: unknown type name 'lv_disp_drv_t'
+  392 |     static lv_disp_drv_t disp_drv;      // contains callback functions
+      |            ^~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:397:23: error: 'EXAMPLE_PIN_NUM_SDA' undeclared (first use in this function)
+  397 |         .sda_io_num = EXAMPLE_PIN_NUM_SDA,
+      |                       ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:397:23: note: each undeclared identifier is reported only once for each function it appears in
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:398:23: error: 'EXAMPLE_PIN_NUM_SCL' undeclared (first use in this function)
+  398 |         .scl_io_num = EXAMPLE_PIN_NUM_SCL,
+      |                       ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:401:29: error: 'EXAMPLE_LCD_PIXEL_CLOCK_HZ' undeclared (first use in this function)
+  401 |         .master.clk_speed = EXAMPLE_LCD_PIXEL_CLOCK_HZ,
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from D:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/include/driver/i2c.h:15,
+                 from D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:21:
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:403:38: error: 'I2C_HOST' undeclared (first use in this function)
+  403 |     ESP_ERROR_CHECK(i2c_param_config(I2C_HOST, &i2c_conf));
+      |                                      ^~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:407:5: error: unknown type name 'esp_lcd_panel_io_handle_t'
+  407 |     esp_lcd_panel_io_handle_t io_handle = NULL;
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:407:43: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  407 |     esp_lcd_panel_io_handle_t io_handle = NULL;
+      |                                           ^~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:408:5: error: unknown type name 'esp_lcd_panel_io_i2c_config_t'
+  408 |     esp_lcd_panel_io_i2c_config_t io_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:409:9: error: field name not in record or union initializer
+  409 |         .dev_addr = EXAMPLE_I2C_HW_ADDR,
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:409:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:409:21: error: 'EXAMPLE_I2C_HW_ADDR' undeclared (first use in this function)
+  409 |         .dev_addr = EXAMPLE_I2C_HW_ADDR,
+      |                     ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:410:9: error: field name not in record or union initializer
+  410 |         .control_phase_bytes = 1,               // According to SSD1306 datasheet
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:410:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:410:32: warning: excess elements in scalar initializer
+  410 |         .control_phase_bytes = 1,               // According to SSD1306 datasheet
+      |                                ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:410:32: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:411:9: error: field name not in record or union initializer
+  411 |         .dc_bit_offset = 6,                     // According to SSD1306 datasheet
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:411:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:411:26: warning: excess elements in scalar initializer
+  411 |         .dc_bit_offset = 6,                     // According to SSD1306 datasheet
+      |                          ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:411:26: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:412:9: error: field name not in record or union initializer
+  412 |         .lcd_cmd_bits = EXAMPLE_LCD_CMD_BITS,   // According to SSD1306 datasheet
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:412:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:412:25: error: 'EXAMPLE_LCD_CMD_BITS' undeclared (first use in this function)
+  412 |         .lcd_cmd_bits = EXAMPLE_LCD_CMD_BITS,   // According to SSD1306 datasheet
+      |                         ^~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:412:25: warning: excess elements in scalar initializer
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:412:25: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:413:9: error: field name not in record or union initializer
+  413 |         .lcd_param_bits = EXAMPLE_LCD_CMD_BITS, // According to SSD1306 datasheet
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:413:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:413:27: warning: excess elements in scalar initializer
+  413 |         .lcd_param_bits = EXAMPLE_LCD_CMD_BITS, // According to SSD1306 datasheet
+      |                           ^~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:413:27: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:414:9: error: field name not in record or union initializer
+  414 |         .on_color_trans_done = example_notify_lvgl_flush_ready,
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:414:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:414:32: error: 'example_notify_lvgl_flush_ready' undeclared (first use in this function)
+  414 |         .on_color_trans_done = example_notify_lvgl_flush_ready,
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:414:32: warning: excess elements in scalar initializer
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:414:32: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:415:9: error: field name not in record or union initializer
+  415 |         .user_ctx = &disp_drv,
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:415:9: note: (near initialization for 'io_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:415:21: warning: excess elements in scalar initializer
+  415 |         .user_ctx = &disp_drv,
+      |                     ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:415:21: note: (near initialization for 'io_config')
+In file included from D:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/include/driver/i2c.h:15,
+                 from D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:21:
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:417:21: error: implicit declaration of function 'esp_lcd_new_panel_io_i2c' [-Werror=implicit-function-declaration]
+  417 |     ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c((esp_lcd_i2c_bus_handle_t)I2C_HOST, &io_config, &io_handle));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:417:47: error: 'esp_lcd_i2c_bus_handle_t' undeclared (first use in this function)
+  417 |     ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c((esp_lcd_i2c_bus_handle_t)I2C_HOST, &io_config, &io_handle));
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:417:72: error: expected ')' before 'I2C_HOST'
+  417 |     ESP_ERROR_CHECK(esp_lcd_new_panel_io_i2c((esp_lcd_i2c_bus_handle_t)I2C_HOST, &io_config, &io_handle));
+      |                                             ~                          ^~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:420:5: error: unknown type name 'esp_lcd_panel_handle_t'
+  420 |     esp_lcd_panel_handle_t panel_handle = NULL;
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:420:43: warning: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+  420 |     esp_lcd_panel_handle_t panel_handle = NULL;
+      |                                           ^~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:421:5: error: unknown type name 'esp_lcd_panel_dev_config_t'
+  421 |     esp_lcd_panel_dev_config_t panel_config = {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:422:9: error: field name not in record or union initializer
+  422 |         .bits_per_pixel = 1,
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:422:9: note: (near initialization for 'panel_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:423:9: error: field name not in record or union initializer
+  423 |         .reset_gpio_num = EXAMPLE_PIN_NUM_RST,
+      |         ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:423:9: note: (near initialization for 'panel_config')
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:423:27: error: 'EXAMPLE_PIN_NUM_RST' undeclared (first use in this function)
+  423 |         .reset_gpio_num = EXAMPLE_PIN_NUM_RST,
+      |                           ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:423:27: warning: excess elements in scalar initializer
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:423:27: note: (near initialization for 'panel_config')
+In file included from D:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/include/driver/i2c.h:15,
+                 from D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:21:
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:425:21: error: implicit declaration of function 'esp_lcd_new_panel_ssd1306' [-Werror=implicit-function-declaration]
+  425 |     ESP_ERROR_CHECK(esp_lcd_new_panel_ssd1306(io_handle, &panel_config, &panel_handle));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:427:21: error: implicit declaration of function 'esp_lcd_panel_reset'; did you mean 'esp_cpu_reset'? [-Werror=implicit-function-declaration]
+  427 |     ESP_ERROR_CHECK(esp_lcd_panel_reset(panel_handle));
+      |                     ^~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:428:21: error: implicit declaration of function 'esp_lcd_panel_init' [-Werror=implicit-function-declaration]
+  428 |     ESP_ERROR_CHECK(esp_lcd_panel_init(panel_handle));
+      |                     ^~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:429:21: error: implicit declaration of function 'esp_lcd_panel_disp_on_off' [-Werror=implicit-function-declaration]
+  429 |     ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(panel_handle, true));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~
+D:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include/esp_err.h:117:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  117 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:408:35: warning: unused variable 'io_config' [-Wunused-variable]
+  408 |     esp_lcd_panel_io_i2c_config_t io_config = {
+      |                                   ^~~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:391:31: warning: unused variable 'disp_buf' [-Wunused-variable]
+  391 |     static lv_disp_draw_buf_t disp_buf; // contains internal graphic buffer(s) called draw buffer(s)
+      |                               ^~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c: In function 'app_main':
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:439:1: error: expected declaration or statement at end of input
+  439 | }
+      | ^
+At top level:
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:389:10: warning: 'app_main' defined but not used [-Wunused-function]
+  389 |     void app_main(void)
+      |          ^~~~~~~~
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:156:18: warning: 'i2c_master_init' defined but not used [-Wunused-function]
+  156 | static esp_err_t i2c_master_init(void)
+      |                  ^~~~~~~~~~~~~~~
+cc1.exe: some warnings being treated as errors
+ninja: build stopped: subcommand failed.

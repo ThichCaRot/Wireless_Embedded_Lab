@@ -1,0 +1,142 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\i2c_self_test\build\bootloader\esp-idf\esptool_py && python D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj 
+ccache D:\Espressif\tools\xtensa-esp32-elf\esp-2022r1-11.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DUNITY_INCLUDE_CONFIG_H -ID:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/build/config -ID:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/newlib/platform_include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/esp_additions/include/freertos -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/freertos/esp_additions/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/include/soc -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/include/soc/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/port/esp32/. -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hw_support/port/esp32/private_include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/heap/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/log/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/esp32/. -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/soc/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/hal/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/hal/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/hal/platform_port/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_common/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/port/soc -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_system/port/include/private -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/xtensa/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/xtensa/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/include/apps -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/include/apps/sntp -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/lwip/src/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/port/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/lwip/port/esp32/include/arch -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_ringbuf/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/efuse/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/efuse/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/deprecated -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/driver/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_pm/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/port/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/mbedtls/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/mbedtls/library -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mbedtls/esp_crt_bundle/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_app_format/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/bootloader_support/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/bootloader_support/bootloader_flash/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_partition/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/app_update/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/spi_flash/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/pthread/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_timer/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/app_trace/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_event/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/nvs_flash/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_phy/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_phy/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/vfs/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_netif/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant/port/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wpa_supplicant/esp_supplicant/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_wifi/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/unity/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/unity/unity/src -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/cmock/CMock/src -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/console -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/http_parser -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp-tls -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp-tls/esp-tls-crypto -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/interface -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/esp32/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_adc/deprecated/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_eth/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub/xtensa -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_gdbstub/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_hid/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/tcp_transport/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_http_client/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_http_server/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_https_ota/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_lcd/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_lcd/interface -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protobuf-c/protobuf-c -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm/include/common -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm/include/security -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/protocomm/include/transports -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_local_ctrl/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_psram/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/espcoredump/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/espcoredump/include/port/xtensa -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wear_levelling/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/sdmmc/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs/diskio -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs/vfs -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/fatfs/src -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/idf_test/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/idf_test/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/ieee802154/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/json/cJSON -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/mqtt/esp-mqtt/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/perfmon/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/spiffs/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/ulp/ulp_common/include -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/ulp/ulp_common/include/esp32 -ID:/Espressif/frameworks/esp-idf-v5.0.1/components/wifi_provisioning/include -mlongcalls -Wno-frame-address  -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fmacro-prefix-map=D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test=. -fmacro-prefix-map=D:/Espressif/frameworks/esp-idf-v5.0.1=/IDF -fstrict-volatile-bitfields -Wno-error=unused-but-set-variable -fno-jump-tables -fno-tree-switch-conversion -DconfigENABLE_FREERTOS_DEBUG_OCDAWARE=1 -std=gnu17 -Wno-old-style-declaration -D_GNU_SOURCE -DIDF_VER=\"v5.0.1-dirty\" -DESP_PLATFORM -D_POSIX_READER_WRITER_LOCKS -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\i2c_example_main.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/i2c_example_main.c.obj -c D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c
+In file included from D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/i2c_example_main.c:8:
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/i2c_self_test/main/ccc.h:6:36: error: missing braces around initializer [-Werror=missing-braces]
+    6 | const unsigned char uit [64][16] = {
+      |                                    ^
+    7 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+    8 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+    9 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x3F, 0x3F,
+      | {                                                                                             }
+   10 | 0x1F, 0x0F, 0x0F, 0x8F, 0x87, 0xC7, 0xC3, 0xE3, 0xE3, 0xF3, 0xF3, 0xFB, 0xFB, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   11 | 0xFF, 0xFF, 0xFF, 0xFF, 0xF7, 0x7F, 0x7F, 0x7F, 0x3F, 0x3F, 0x3F, 0x9F, 0x9F, 0x1F, 0xDF, 0xCF,
+      | {                                                                                             }
+   12 | 0xCF, 0xCF, 0xCF, 0xCF, 0xCF, 0xCF, 0xC7, 0x03, 0x01, 0x01, 0x01, 0x01, 0x01, 0x03, 0x87, 0xBF,
+      | {                                                                                             }
+   13 | 0x3F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   14 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   15 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   16 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   17 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x3F, 0x1F, 0x8F, 0xC3, 0xC1, 0x60, 0xB0, 0xD8, 0x78, 0xAC,
+      | {                                                                                             }
+   18 | 0xF6, 0xDE, 0xEF, 0xFF, 0xF7, 0x7F, 0x3F, 0x3D, 0x1F, 0x9E, 0x8F, 0xCF, 0xC7, 0xE7, 0xE3, 0xF3,
+      | {                                                                                             }
+   19 | 0xF1, 0xF9, 0xF8, 0xFC, 0xFC, 0xFC, 0xFE, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFD,
+      | {                                                                                             }
+   20 | 0xFB, 0xF7, 0xEF, 0xBF, 0x7F, 0xFF, 0xFF, 0xFF, 0xFE, 0xFE, 0xFE, 0xFE, 0xFE, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   21 | 0xFF, 0xFE, 0xFC, 0xF9, 0xC3, 0x1F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   22 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   23 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   24 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   25 | 0xFF, 0xFF, 0xFF, 0xFF, 0xDF, 0xEC, 0xF6, 0xDB, 0xED, 0xF6, 0x7B, 0x3D, 0x3F, 0x1E, 0x0F, 0x87,
+      | {                                                                                             }
+   26 | 0xC3, 0xE3, 0xF1, 0xF0, 0xF8, 0xFC, 0x3E, 0x3E, 0x3F, 0x3F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F,
+      | {                                                                                             }
+   27 | 0x7F, 0x3F, 0x3F, 0x3F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   28 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFD, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   29 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xF0, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   30 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   31 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   32 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   33 | 0xFF, 0xFF, 0x7F, 0x3F, 0x1F, 0x0F, 0x07, 0x83, 0xC1, 0xE0, 0xF0, 0xF8, 0xFC, 0xFE, 0xFF, 0xFF,
+      | {                                                                                             }
+   34 | 0xFF, 0xFF, 0xBF, 0x87, 0xC1, 0xE0, 0x70, 0x3C, 0x1E, 0x06, 0x07, 0x03, 0x01, 0x01, 0x03, 0x03,
+      | {                                                                                             }
+   35 | 0x07, 0x0E, 0x1C, 0x78, 0xF0, 0xC1, 0x83, 0x8F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   36 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   37 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   38 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   39 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   40 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x1F, 0x0F,
+      | {                                                                                             }
+   41 | 0x03, 0x00, 0x00, 0xE0, 0xF0, 0xFC, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xE1, 0xC0, 0xC1, 0xC1, 0xDD,
+      | {                                                                                             }
+   42 | 0xFF, 0xFB, 0xFD, 0xDF, 0xC3, 0xC1, 0xC3, 0xE3, 0xE3, 0xF7, 0xFE, 0xFE, 0xFC, 0xFC, 0xFE, 0xFE,
+      | {                                                                                             }
+   43 | 0xF7, 0xF7, 0xE3, 0xC3, 0xC3, 0xC3, 0xC7, 0xDF, 0xF9, 0xFF, 0xFF, 0xC1, 0xC1, 0xC1, 0xC1, 0xFF,
+      | {                                                                                             }
+   44 | 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0xBF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   45 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   46 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   47 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   48 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x0F, 0x01, 0x00, 0x00, 0x00,
+      | {                                                                                             }
+   49 | 0x00, 0xF8, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xE7, 0xCF, 0x8F, 0x0F, 0x0F, 0x0F, 0x1F, 0x3E,
+      | {                                                                                             }
+   50 | 0x3C, 0x7D, 0xF8, 0xF1, 0xE0, 0xC1, 0xC3, 0x87, 0x1F, 0x3F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   51 | 0x3F, 0x1F, 0x8F, 0x83, 0xC1, 0xE0, 0xF1, 0xF0, 0x79, 0x7D, 0x3E, 0x1F, 0x0F, 0x0F, 0x0F, 0x8F,
+      | {                                                                                             }
+   52 | 0xCF, 0xE7, 0xF7, 0xFD, 0xFE, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   53 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   54 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   55 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   56 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xC0, 0x00, 0x00, 0x00, 0x00,
+      | {                                                                                             }
+   57 | 0x00, 0x00, 0x07, 0x1F, 0x3F, 0x7F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFC, 0xF8,
+      | {                                                                                             }
+   58 | 0xF8, 0xF0, 0xF0, 0xE0, 0xE1, 0xE1, 0xC1, 0xC3, 0xC3, 0xC3, 0xC0, 0xC0, 0xC3, 0xC3, 0xC1, 0xC0,
+      | {                                                                                             }
+   59 | 0xC2, 0xC3, 0xC3, 0x81, 0xC1, 0xC1, 0xE0, 0xE0, 0xF0, 0xF8, 0xF8, 0xFC, 0xFE, 0xFE, 0xFF, 0xFF,
+      | {                                                                                             }
+   60 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   61 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   62 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   63 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   64 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0xFC, 0xF8,
+      | {                                                                                             }
+   65 | 0xF0, 0xF0, 0xE0, 0xE0, 0xE0, 0xE0, 0xE0, 0xE0, 0xE0, 0xC1, 0xC1, 0xC1, 0xE3, 0xE3, 0xE3, 0xE3,
+      | {                                                                                             }
+   66 | 0xE3, 0xE3, 0xE3, 0xE3, 0xF3, 0xF3, 0xF3, 0xF3, 0xF9, 0xF9, 0xF9, 0xFD, 0xFD, 0xFC, 0xFE, 0xFE,
+      | {                                                                                             }
+   67 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   68 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   69 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+      | {                                                                                             }
+   70 | 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+      | {
+   71 | };
+      | }
+cc1.exe: some warnings being treated as errors
+ninja: build stopped: subcommand failed.
