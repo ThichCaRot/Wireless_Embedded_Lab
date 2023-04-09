@@ -293,7 +293,7 @@ void task_ssd1306_display_clear(void *ignore)
     vTaskDelete(NULL);
 }
 ```
-
+Phần chương trình display_clear tụi em không nắm rõ cách xài mà cũng không thấy ảnh hưởng quá nhiều đến code kết quả nên đã không tìm hiểu kĩ cách hoạt động cũng như dùng đến trong bài tập
 
 ```C++
 void app_main(void)
