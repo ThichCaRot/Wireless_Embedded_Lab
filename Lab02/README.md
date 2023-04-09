@@ -53,6 +53,7 @@ Chỉnh sửa lại project để giao tiếp với ESP32 theo mô tả bên dư
 ```
 ### Bài tập 2 + 3 (gộp)
 Sử dụng font, thư viện và các hàm cho sẵn theo tài nguyên đính kèm, viết chương trình hiển thị MSSV của các thành viên trong nhóm lên OLED SSD1306
+
 Vẽ logo UIT lên OLED SSD1306. Giải thích cách làm và kết quả
 ------------------------------------------------------------------------------------
 
@@ -276,6 +277,7 @@ void task_ssd1306_display_clear(void *ignore)
 }
 ```
 
+
 ```C++
 void app_main(void)
 {
@@ -286,6 +288,7 @@ void app_main(void)
     //task_ssd1306_display_image() ;
 }
 ```
+Phần chương trình nếu sử dụng để in họ tên và mã số sinh viên thành viên trong nhóm lên màn hình OLED
 
 ```C++
 void app_main(void)
@@ -297,6 +300,7 @@ void app_main(void)
     task_ssd1306_display_image() ;
 }
 ```
+Phần chương trình nếu sử dụng để in logo UIT lên màn hình OLED
 
 ```C++
 const unsigned char uit [64][16] = {
@@ -366,5 +370,6 @@ const unsigned char uit [64][16] = {
 {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}
 };
 ```
+File hex theo grid để hiển thị logo UIT trong file cc.h
 
 Link YouTube: https://youtu.be/lvGm1jAH1YU
