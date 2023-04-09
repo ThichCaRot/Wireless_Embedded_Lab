@@ -139,6 +139,23 @@ void ssd1306_init()
     i2c_cmd_link_delete(cmd);
 }
 ```
+Thiết lập màn OLED.
+
+Tạo một command link với hàm i2c_cmd_link_create(), sau đó điền vào các dữ liệu cần thiết để gửi đến slave, bao gồm:
+
+o Start bit: i2c_master_start().
+
+o Địa chỉ slave: i2c_master_write_byte(). Đối số là một byte địa chỉ đính kèm với bit READ (vào bit ngoài cùng bên phải).
+
+o Data: one hoặc nhiều byte được gửi vào đối số của hàm i2c_master_write().
+
+o Stop bit: i2c_master_stop().
+
+Cả 2 hàm i2c_master_write_byte() và i2c_master_write() đều có một đối số bổ sung chỉ định liệu master có đảm bảo rằng nó nhận được bit ACK hay không.
+
+• Kích hoạt việc thực thi command link bằng bộ điều khiển I2C với hàm i2c_master_cmd_begin(). Một khi việc thực thi được kích hoạt, command link sẽ không được chỉnh sửa nữa.
+
+• Sau khi lệnh được gửi, trả lại tài nguyên được sử dụng bởi command link bằng cách gọi hàm i2c_cmd_link_delete().
 
 ```C++
 void task_ssd1306_display_text(const void *arg_text) 
