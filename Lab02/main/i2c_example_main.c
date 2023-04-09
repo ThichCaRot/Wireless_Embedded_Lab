@@ -39,33 +39,33 @@ void i2c_config()
 
 void ssd1306_init() 
 {
-	esp_err_t espRc;
+    esp_err_t espRc;
 
-	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 
-	i2c_master_start(cmd);
-	i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
-	i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_CMD_STREAM, true);
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
+    i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_CMD_STREAM, true);
 
-	i2c_master_write_byte(cmd, OLED_CMD_SET_CHARGE_PUMP, true);
-	i2c_master_write_byte(cmd, 0x14, true);
+    i2c_master_write_byte(cmd, OLED_CMD_SET_CHARGE_PUMP, true);
+    i2c_master_write_byte(cmd, 0x14, true);
 
-	i2c_master_write_byte(cmd, OLED_CMD_SET_SEGMENT_REMAP, true); // reverse left-right mapping
-	i2c_master_write_byte(cmd, OLED_CMD_SET_DISPLAY_CLK_DIV, true); // reverse up-bottom mapping
+    i2c_master_write_byte(cmd, OLED_CMD_SET_SEGMENT_REMAP, true); // reverse left-right mapping
+    i2c_master_write_byte(cmd, OLED_CMD_SET_DISPLAY_CLK_DIV, true); // reverse up-bottom mapping
 
-	i2c_master_write_byte(cmd, OLED_CMD_DISPLAY_NORMAL, true);
+    i2c_master_write_byte(cmd, OLED_CMD_DISPLAY_NORMAL, true);
     i2c_master_write_byte(cmd, OLED_CMD_DISPLAY_OFF, true);
-	i2c_master_write_byte(cmd, OLED_CMD_DISPLAY_ON, true);
-	i2c_master_stop(cmd);
+    i2c_master_write_byte(cmd, OLED_CMD_DISPLAY_ON, true);
+    i2c_master_stop(cmd);
 
-	espRc = i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
-	if (espRc == ESP_OK) 
+    espRc = i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
+    if (espRc == ESP_OK) 
     {
-		ESP_LOGI(TAG, "OLED configured successfully");
-	} else {
-		ESP_LOGE(TAG, "OLED configuration failed. code: 0x%.2X", espRc);
-	}
-	i2c_cmd_link_delete(cmd);
+        ESP_LOGI(TAG, "OLED configured successfully");
+    } else {
+        ESP_LOGE(TAG, "OLED configuration failed. code: 0x%.2X", espRc);
+    }
+    i2c_cmd_link_delete(cmd);
 }
 
 void task_ssd1306_display_text(const void *arg_text) 
@@ -146,14 +146,14 @@ void task_ssd1306_display_image()
 
     for (int n = 0 ; n < 8 ; n++)
     {
-    	cmd = i2c_cmd_link_create();
-    	i2c_master_start(cmd);
-    	i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
+        cmd = i2c_cmd_link_create();
+        i2c_master_start(cmd);
+        i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
         i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_DATA_STREAM, true);
 
         for (int i = 0; i < 8; i++ )
         {
-        	i2c_master_write(cmd, uit[8 * n + i ], 16, true);
+            i2c_master_write(cmd, uit[8 * n + i ], 16, true);
         }
         i2c_master_stop(cmd);
         i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
@@ -203,17 +203,7 @@ void app_main(void)
 {
     i2c_config();
     ssd1306_init();
-    
-    /*task_ssd1306_display_clear("Clear Display");
     task_ssd1306_display_text("20520688\nNgo Ta Dinh\nPhong \n20520467\nLe Nguyen\nQuang Duy");
-    task_ssd1306_display_clear("Clear Display");
-    vTaskDelay(100/portTICK_PERIOD_MS);*/
+    vTaskDelay(100/portTICK_PERIOD_MS);
     //task_ssd1306_display_image() ;
-    xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
-    vTaskDelay(100/portTICK_PERIOD_MS);
-    xTaskCreate(&task_ssd1306_display_text, "ssd1306_display_text",  2048,
-        (void *)"Hello world!\nMulitine is OK!\nAnother line", 6, NULL);
-    vTaskDelay(100/portTICK_PERIOD_MS);
-    xTaskCreate(&task_ssd1306_display_clear, "ssd1306_display_clear",  2048, NULL, 6, NULL);
-    task_ssd1306_display_image();
 }
