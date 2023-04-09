@@ -1,9 +1,16 @@
-| Supported Targets | ESP32 | ESP32-C3 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- |
-
 # I2C Self-Test Example
 
 (See the README.md file in the upper level 'examples' directory for more information about examples.)
+```C++
+#include <stdio.h>
+#include "esp_log.h"
+#include "driver/i2c.h"
+#include "sdkconfig.h"
+#include "ssd1306.h"
+#include "font8x8_basic.h"
+#include <string.h>
+#include "cc.h"
+```
 
 ## Overview
 
