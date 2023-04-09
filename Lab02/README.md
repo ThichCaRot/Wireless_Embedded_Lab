@@ -1,6 +1,9 @@
-# I2C Self-Test Example
+# BÁO CÁO BÀI THỰC HÀNH SỐ 02
+Môn học: THIẾT KẾ HỆ THỐNG NHÚNG KHÔNG DÂY 
+Tên chủ đề: LẬP TRÌNH CHO OLED SSD1306 TRÊN ESP32
+GVHD: Trần Hoàng Lộc
+Nhóm: 10 
 
-(See the README.md file in the upper level 'examples' directory for more information about examples.)
 ```C++
 #include <stdio.h>
 #include "esp_log.h"
