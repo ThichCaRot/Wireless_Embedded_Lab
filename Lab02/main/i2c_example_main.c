@@ -203,7 +203,7 @@ void app_main(void)
 {
     i2c_config();
     ssd1306_init();
-    task_ssd1306_display_text("20520688\nNgo Ta Dinh\nPhong \n20520467\nLe Nguyen\nQuang Duy");
-    vTaskDelay(100/portTICK_PERIOD_MS);
-    //task_ssd1306_display_image() ;
+    //task_ssd1306_display_text("20520688\nNgo Ta Dinh\nPhong \n20520467\nLe Nguyen\nQuang Duy");
+    //vTaskDelay(100/portTICK_PERIOD_MS);
+    task_ssd1306_display_image() ;
 }
