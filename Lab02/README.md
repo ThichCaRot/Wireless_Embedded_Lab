@@ -15,12 +15,40 @@ Nhóm: 10
 | Lê Nguyễn Quang Duy       | 20520467 | 20520467@gm.uit.edu.vn |
 
 
-## How to use example
+## 2. NỘI DUNG THỰC HIỆN: 
 
-### Hardware Required
+|         Nội dung          |Tình trạng|
+| ------------------------- | -------- |
+| Bài tập 1                 | 100%     |
+| Bài tập 2                 | 100%     |
+| Bài tập 3                 | 100%     |
+|Điểm tự đánh giá           |   10/10  |
 
-To run this example, you should have one ESP development board (e.g. ESP32-WROVER Kit) or ESP core board (e.g. ESP32-DevKitC). Optionally, you can also connect an external sensor. Here we choose the BH1750 just as an example. BH1750 is a digital ambient light sensor. For more information about it, you can read the [datasheet](http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1721fvc-e.pdf) of this sensor.
-
+### Bài tập 1 (02 điểm) 
+Tạo một project từ ví dụ esp-idf/peripherals/i2c/i2c_self_test.
+Chỉnh sửa lại project để giao tiếp với ESP32 theo mô tả bên dưới? Giải thích cách cài
+đặt? 
+-------------------------------------------------------------------------------------
+- Đầu tiên, ta cần cấu hình lại pins giao tiếp dựa theo mô tả của đề bài. Ở đây đề bài sử dụng esp32 có chân OLED SDA ở GPIO5 và chân OLED SCL ở GPIO4 :
+```C++
+#define I2C_MASTER_SCL_IO  4 /*chân số 4 cho I2C master clock*/
+#define I2C_MASTER_SDA_IO 5 /*chân số 5 cho I2C master data*/
+```
+- Tiếp theo ta cần xác định port number cho giao tiếp I2C trên master 
+```C++
+#define I2C_MASTER_NUM 0
+```
+- Ta cũng cần phải config tần số clock của I2C master. Nếu giao tiếp với slave là ssd1306 thì tần số clock nên dùng giao động từ 100kHz đến 400kHz. ở đây ta sử dụng tần số clock 400kHz
+```C++
+#define DATA_LENGTH 512                  /*!< Data buffer length of test buffer */
+#define RW_TEST_LENGTH 128               /*!< Data length for r/w test, [0,DATA_LENGTH] */
+#define DELAY_TIME_BETWEEN_ITEMS_MS 1000 /*!< delay time between different test items */
+#define EXAMPLE_LCD_PIXEL_CLOCK_HZ    (400 * 1000)
+#define EXAMPLE_PIN_NUM_SDA           5
+#define EXAMPLE_PIN_NUM_SCL           4
+#define EXAMPLE_PIN_NUM_RST           -1
+#define EXAMPLE_I2C_HW_ADDR           0x3C
+```
 #### Pin Assignment(esp32, esp32s2):
 
 **Note:** The following pin assignments are used by default, you can change these  in the `menuconfig` .
