@@ -61,6 +61,9 @@ Link github: https://github.com/Kaze2508/Wireless_Embedded_Lab/tree/main/Lab02
 
 Giải thích cách thức hoạt động: 
 
+Các thư viện được tích hợp vào và sử dụng. Ngoài thư viện nhập xuất stdio.h  tiêu chuẩn, các thư viện esp_log, i2c, sdkconfig, ssd1306 để thiết lập và sử dụng với giao thức I2C với OLED SSD1306
+
+File font8x8_basic để sử dụng font in text lên OLED. File cc chứa khai báo hàm dùng để in logo UIT
 ```C++
 #include <stdio.h>
 #include "esp_log.h"
@@ -71,7 +74,8 @@ Giải thích cách thức hoạt động:
 #include <string.h>
 #include "cc.h"
 ```
-Các thư viện được tích hợp vào và sử dụng. Ngoài thư viện nhập xuất stdio.h  tiêu chuẩn, các thư viện esp_log, i2c, sdkconfig, ssd1306 để thiết lập và sử dụng với giao thức I2C với OLED SSD1306. File font8x8_basic để sử dụng font in text lên OLED. File cc chứa khai báo hàm dùng để in logo UIT
+
+Define các giá trị sử dụng xuyên suốt chương trình. Ở đây chúng ta kết nối và giao tiếp với OLED qua 2 pin 4 và pin 5 (như trong hình)
 ```C++
 static const char *TAG = "i2c-example";
 
@@ -88,7 +92,10 @@ static const char *TAG = "i2c-example";
 #define EXAMPLE_PIN_NUM_RST           -1
 #define EXAMPLE_I2C_HW_ADDR           0x3C
 ```
-Define các giá trị sử dụng xuyên suốt chương trình. Ở đây chúng ta kết nối và giao tiếp với OLED qua 2 pin 4 và pin 5 (như trong hình)
+
+Hàm dùng để thiết lập giao thức I2C giữ ESP và OLED. Chúng ta cần sử dụng master mode để ghi tín hiệu ra OLED. Các chân giá trị thiết lập được sử dụng từ khai báo của phần define.
+
+Nếu không có lỗi nào xảy ra, thiết bị sẽ tiến hành cài đặt driver I2C để hiển thị (như trong hướng dẫn thực hành Lab02)
 ```C++
 void i2c_config()
 {
@@ -105,8 +112,24 @@ void i2c_config()
     ESP_ERROR_CHECK(i2c_driver_install(I2C_HOST, I2C_MODE_MASTER, 0, 0, 0));
 }
 ```
-Hàm dùng để thiết lập giao thức I2C giữ ESP và OLED. Chúng ta cần sử dụng master mode để ghi tín hiệu ra OLED. Các chân giá trị thiết lập được sử dụng từ khai báo của phần define.
-Nếu không có lỗi nào xảy ra, thiết bị sẽ tiến hành cài đặt driver I2C để hiển thị (như trong hướng dẫn thực hành Lab02)
+
+Thiết lập màn OLED.
+
+Tạo một command link với hàm i2c_cmd_link_create(), sau đó điền vào các dữ liệu cần thiết để gửi đến slave, bao gồm:
+
+o Start bit: i2c_master_start().
+
+o Địa chỉ slave: i2c_master_write_byte(). Đối số là một byte địa chỉ đính kèm với bit READ (vào bit ngoài cùng bên phải).
+
+o Data: one hoặc nhiều byte được gửi vào đối số của hàm i2c_master_write().
+
+o Stop bit: i2c_master_stop().
+
+Cả 2 hàm i2c_master_write_byte() và i2c_master_write() đều có một đối số bổ sung chỉ định liệu master có đảm bảo rằng nó nhận được bit ACK hay không.
+
+• Kích hoạt việc thực thi command link bằng bộ điều khiển I2C với hàm i2c_master_cmd_begin(). Một khi việc thực thi được kích hoạt, command link sẽ không được chỉnh sửa nữa.
+
+• Sau khi lệnh được gửi, trả lại tài nguyên được sử dụng bởi command link bằng cách gọi hàm i2c_cmd_link_delete().
 ```C++
 void ssd1306_init() 
 {
@@ -139,24 +162,8 @@ void ssd1306_init()
     i2c_cmd_link_delete(cmd);
 }
 ```
-Thiết lập màn OLED.
 
-Tạo một command link với hàm i2c_cmd_link_create(), sau đó điền vào các dữ liệu cần thiết để gửi đến slave, bao gồm:
-
-o Start bit: i2c_master_start().
-
-o Địa chỉ slave: i2c_master_write_byte(). Đối số là một byte địa chỉ đính kèm với bit READ (vào bit ngoài cùng bên phải).
-
-o Data: one hoặc nhiều byte được gửi vào đối số của hàm i2c_master_write().
-
-o Stop bit: i2c_master_stop().
-
-Cả 2 hàm i2c_master_write_byte() và i2c_master_write() đều có một đối số bổ sung chỉ định liệu master có đảm bảo rằng nó nhận được bit ACK hay không.
-
-• Kích hoạt việc thực thi command link bằng bộ điều khiển I2C với hàm i2c_master_cmd_begin(). Một khi việc thực thi được kích hoạt, command link sẽ không được chỉnh sửa nữa.
-
-• Sau khi lệnh được gửi, trả lại tài nguyên được sử dụng bởi command link bằng cách gọi hàm i2c_cmd_link_delete().
-
+Hàm **display_text** được cho sẵn để in text ra màn hình OLED
 ```C++
 void task_ssd1306_display_text(const void *arg_text) 
 {
@@ -214,49 +221,59 @@ void task_ssd1306_display_text(const void *arg_text)
     vTaskDelete(NULL);
 }
 ```
+
 In text ra màn hình OLED
 Khi sử dụng hàm, hàm sẽ nhận text được input và parse xuống biến **arg_text**
 ```C++
 void task_ssd1306_display_text(const void *arg_text) 
 ```
+
 Biến text_len dùng để xác định chiều dài đoạn text để khởi tạo vòng lặp in ra màn hình 
 ```C++
 uint8_t text_len = strlen(text);
 ```
+
 Các hàm để khởi tạo command link và start bit
 ```C++
 i2c_cmd_handle_t cmd;
 cmd = i2c_cmd_link_create();
 i2c_master_start(cmd);
 ```
+
 Truyền giá trị dạng byte qua command link 
 ```C++
 i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_CMD_STREAM, true);
 ```
+
 Reset con trỏ in ra màn hình về column 0
 ```C++
 i2c_master_write_byte(cmd, 0x00, true); // reset column - choose column --> 0
 ```
+
 Reset con trỏ in ra màn hình về line 0
 ```C++
 i2c_master_write_byte(cmd, 0x10, true); // reset line - choose line --> 0
 ```
+
 Reset trang in đang sử dụng
 ```C++
 i2c_master_write_byte(cmd, 0xB0 | cur_page, true); // reset page
 ```
+
 Kết thúc command link và delete biến cmd với thời gian delay thực thi 10 milisecond cho 1 Tick
 ```C++
 i2c_master_stop(cmd);
 i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
 i2c_cmd_link_delete(cmd);
 ```
+
 Khởi chạy vòng lặp với i từ 0 đến chiều dài của chuỗi text được nhập vào
 
 Mục đích nhằm quét hết chuỗi ký tự, đối chiếu giá trị ký tự tương dương trong file font8x8 và in ra màn hình OLED dựa vào tham số hex
 ```C++
 for (uint8_t i = 0; i < text_len; i++)
 ```
+
 Nếu chuỗi giá trị quét trúng ký tự "\n" thì sẽ khởi chạy command link reset cột và dòng tương tự lúc initialize trước lúc in text
 ```C++
 if (text[i] == '\n') 
@@ -269,6 +286,7 @@ if (text[i] == '\n')
             i2c_master_write_byte(cmd, 0x00, true); // reset column
             i2c_master_write_byte(cmd, 0x10, true);
 ```
+
 Nhưng dòng cuối cùng sẽ tăng giá trị page thông qua biến cur_page để chương trình xuống dòng, sau đó kết thúc command link tương tự như lúc initialize đầu hàm
 ```C++
             i2c_master_write_byte(cmd, 0xB0 | ++cur_page, true); // increment page
@@ -278,16 +296,20 @@ Nhưng dòng cuối cùng sẽ tăng giá trị page thông qua biến cur_page 
             i2c_cmd_link_delete(cmd);
         } 
 ```
-Còn trường hợp khác, chương trình sẽ hoạt động gần như tương tự, chỉ khác bước tham chiếu giá trị tương đương sau khi quy đổi về dạng biến uint_8t trong bảng font8x8 để in ra màn hình
+
+Còn trường hợp khác, chương trình sẽ hoạt động gần như tương tự, chỉ khác bước tham chiếu giá trị tương đương sau khi quy đổi về dạng biến uint_8t trong bảng font8x8 để in ra màn hình, chế độ ghi vào command link để truyền là **DATA** chứ không phải **BYTE**
 
 Trong đó cmd là command link để ghi giá trị, font8x8_basic_tr là bảng theo định dạng mảng 2 chiều, 8 là độ rộng của 1 mảng
 ```C++
+            i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_DATA_STREAM, true);
             i2c_master_write(cmd, font8x8_basic_tr[(uint8_t)text[i]], 8, true);
 ```
+
 Về cách thức hoạt động, ví dụ khi chương trình quét được ký tự **O**, hàm sẽ dò tham chiếu giá trị của O trong mảng font8x8_basic_tr
 ```C++
     { 0x1C, 0x3E, 0x63, 0x41, 0x63, 0x3E, 0x1C, 0x00 },   // U+004F (O)
 ```
+
 Lần lượt in ra màn hình khi quy đổi sang dạng hex sẽ là
 
 1C -> 00011100
@@ -359,6 +381,50 @@ void task_ssd1306_display_image()
 }
 ```
 
+Phần đầu chương trình của hàm **display_image** tương tự của hàm **display_text** nên tụi em xin phép không giải thích lại để tránh dài dòng ạ
+
+Hàm text có phần parse giá trị, còn hàm display_image sẽ lấy giá trị trực tiếp từ bảng file hex generate sẵn ạ
+
+Lý do tụi em decode logo UIT nền trắng chử đen vì độ tương phản cộng với phân giải nhỏ của ESP32 sẽ dễ nhìn hơn
+
+Nếu tụi em để hình gốc là logo với nền transparent, khi decode sang hex sẽ thành file nền đen logo trắng rất khó nhìn
+
+Chương trình sẽ chạy 2 vòng lặp để quét và in ra màn OLED theo tín hiệu OLED giống file text, nhưng là tất cả chứ không tham chiếu và chọn
+
+Hàm khởi tạo command link tụi em sẽ để ngay sau vòng lặp đầu mỗi lần lặp
+```C++
+for (int n = 0 ; n < 8 ; n++)
+    {
+        for (int i = 0; i < 8; i++ )
+```
+
+Tương tự hàm **display_text**, cách thức in ra màn hình của **display_image** cũng sẽ là đọc hex và in ra nên em sẽ không giải thích lại
+```C++
+            i2c_master_write(cmd, uit[8 * n + i ], 16, true);
+```
+
+Vì cứ mỗi lần kết thúc 128 pixel chiều ngang của màn hình OLED, tương đương 8 page mỗi 16 pixel, nên vòng lặp sẽ ngắt mỗi 8 lần để chèn lệnh xuống dòng sử dụng trong hàm **display_text**
+```C++
+        i2c_master_stop(cmd);
+        i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
+        i2c_cmd_link_delete(cmd);
+
+        cmd = i2c_cmd_link_create();
+        i2c_master_start(cmd);
+        i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
+
+        i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_CMD_STREAM, true);
+        i2c_master_write_byte(cmd, 0x00, true); // reset column
+        i2c_master_write_byte(cmd, 0x10, true);
+        i2c_master_write_byte(cmd, 0xB0 | ++cur_page, true); // increment page
+
+        i2c_master_stop(cmd);
+        i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
+        i2c_cmd_link_delete(cmd);
+    }
+```
+
+Phần chương trình display_clear tụi em không nắm rõ cách xài mà cũng không thấy ảnh hưởng quá nhiều đến code kết quả nên đã không tìm hiểu kĩ cách hoạt động cũng như dùng đến trong bài tập
 ```C++
 void task_ssd1306_display_clear(void *ignore) 
 {
@@ -384,8 +450,8 @@ void task_ssd1306_display_clear(void *ignore)
     vTaskDelete(NULL);
 }
 ```
-Phần chương trình display_clear tụi em không nắm rõ cách xài mà cũng không thấy ảnh hưởng quá nhiều đến code kết quả nên đã không tìm hiểu kĩ cách hoạt động cũng như dùng đến trong bài tập
 
+Hàm chính của chương trình
 ```C++
 void app_main(void)
 {
