@@ -215,7 +215,7 @@ void task_ssd1306_display_text(const void *arg_text)
 }
 ```
 In text ra màn hình OLED
-Khi sử dụng hàm, hàm sẽ nhận text được input và parse xuống biến ~~arg_text~~
+Khi sử dụng hàm, hàm sẽ nhận text được input và parse xuống biến ~arg_text~
 ```C++
 void task_ssd1306_display_text(const void *arg_text) 
 ```
