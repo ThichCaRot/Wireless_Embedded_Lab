@@ -214,6 +214,44 @@ void task_ssd1306_display_text(const void *arg_text)
     vTaskDelete(NULL);
 }
 ```
+In text ra màn hình OLED
+Khi sử dụng hàm, hàm sẽ nhận text được input và parse xuống biến arg_text
+```C++
+void task_ssd1306_display_text(const void *arg_text) 
+```
+Biến text_len dùng để xác định chiều dài đoạn text để khởi tạo vòng lặp in ra màn hình 
+```C++
+uint8_t text_len = strlen(text);
+```
+Các hàm để khởi tạo command link và start bit
+```C++
+i2c_cmd_handle_t cmd;
+cmd = i2c_cmd_link_create();
+i2c_master_start(cmd);
+```
+Truyền giá trị dạng byte qua command link 
+```C++
+i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_CMD_STREAM, true);
+```
+Reset con trỏ in ra màn hình về column 0
+```C++
+i2c_master_write_byte(cmd, 0x00, true); // reset column - choose column --> 0
+```
+Reset con trỏ in ra màn hình về line 0
+```C++
+i2c_master_write_byte(cmd, 0x10, true); // reset line - choose line --> 0
+```
+Reset trang in đang sử dụng
+```C++
+i2c_master_write_byte(cmd, 0xB0 | cur_page, true); // reset page
+```
+Kết thúc command link và delete biến cmd với thời gian delay thực thi 10 milisecond cho 1 Tick
+```C++
+i2c_master_stop(cmd);
+i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
+i2c_cmd_link_delete(cmd);
+```
+
 
 ```C++
 void task_ssd1306_display_image() 
