@@ -215,7 +215,7 @@ void task_ssd1306_display_text(const void *arg_text)
 }
 ```
 In text ra màn hình OLED
-Khi sử dụng hàm, hàm sẽ nhận text được input và parse xuống biến ~arg_text~
+Khi sử dụng hàm, hàm sẽ nhận text được input và parse xuống biến **arg_text**
 ```C++
 void task_ssd1306_display_text(const void *arg_text) 
 ```
@@ -291,12 +291,19 @@ Về cách thức hoạt động, ví dụ khi chương trình quét được k�
 Lần lượt in ra màn hình khi quy đổi sang dạng hex sẽ là
 
 1C -> 00011100
+
 3E -> 00111110
+
 63 -> 01100011
+
 41 -> 01000001
+
 63 -> 01100011
+
 3E -> 00111110
+
 1C -> 00011100
+
 00 -> 00000000
 
 ```C++
