@@ -251,7 +251,53 @@ i2c_master_stop(cmd);
 i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
 i2c_cmd_link_delete(cmd);
 ```
+Khởi chạy vòng lặp với i từ 0 đến chiều dài của chuỗi text được nhập vào
 
+Mục đích nhằm quét hết chuỗi ký tự, đối chiếu giá trị ký tự tương dương trong file font8x8 và in ra màn hình OLED dựa vào tham số hex
+```C++
+for (uint8_t i = 0; i < text_len; i++)
+```
+Nếu chuỗi giá trị quét trúng ký tự "\n" thì sẽ khởi chạy command link reset cột và dòng tương tự lúc initialize trước lúc in text
+```C++
+if (text[i] == '\n') 
+        {
+            cmd = i2c_cmd_link_create();
+            i2c_master_start(cmd);
+            i2c_master_write_byte(cmd, (OLED_I2C_ADDRESS << 1) | I2C_MASTER_WRITE, true);
+
+            i2c_master_write_byte(cmd, OLED_CONTROL_BYTE_CMD_STREAM, true);
+            i2c_master_write_byte(cmd, 0x00, true); // reset column
+            i2c_master_write_byte(cmd, 0x10, true);
+```
+Nhưng dòng cuối cùng sẽ tăng giá trị page thông qua biến cur_page để chương trình xuống dòng, sau đó kết thúc command link tương tự như lúc initialize đầu hàm
+```C++
+            i2c_master_write_byte(cmd, 0xB0 | ++cur_page, true); // increment page
+
+            i2c_master_stop(cmd);
+            i2c_master_cmd_begin(I2C_NUM_0, cmd, 10/portTICK_PERIOD_MS);
+            i2c_cmd_link_delete(cmd);
+        } 
+```
+Còn trường hợp khác, chương trình sẽ hoạt động gần như tương tự, chỉ khác bước tham chiếu giá trị tương đương sau khi quy đổi về dạng biến uint_8t trong bảng font8x8 để in ra màn hình
+
+Trong đó cmd là command link để ghi giá trị, font8x8_basic_tr là bảng theo định dạng mảng 2 chiều, 8 là độ rộng của 1 mảng
+```C++
+            i2c_master_write(cmd, font8x8_basic_tr[(uint8_t)text[i]], 8, true);
+```
+Về cách thức hoạt động, ví dụ khi chương trình quét được ký tự **O**, hàm sẽ dò tham chiếu giá trị của O trong mảng font8x8_basic_tr
+```C++
+    { 0x1C, 0x3E, 0x63, 0x41, 0x63, 0x3E, 0x1C, 0x00 },   // U+004F (O)
+```
+Lần lượt in ra màn hình khi quy đổi sang dạng hex sẽ là
+
+1C -> 00011100
+3E -> 00111110
+63 -> 01100011
+41 -> 01000001
+63 -> 01100011
+3E -> 00111110
+1C -> 00011100
+00 -> 00000000
 
 ```C++
 void task_ssd1306_display_image() 
