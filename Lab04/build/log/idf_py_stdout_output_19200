@@ -1,0 +1,9 @@
+[1/5] cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\Lab04\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/partition_table/partition-table.bin D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/mqtt_tcp.bin"
+FAILED: esp-idf/esptool_py/CMakeFiles/app_check_size D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/esp-idf/esptool_py/CMakeFiles/app_check_size 
+cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\Lab04\build\esp-idf\esptool_py && D:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/partition_table/partition-table.bin D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/mqtt_tcp.bin"
+Error: app partition is too small for binary mqtt_tcp.bin size 0x148930:
+  - Part 'factory' 0/0 @ 0x10000 size 0x100000 (overflow 0x48930)
+[2/5] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D D:\Espressif\tools\espressif-ide\2.9.0\workspace\Lab04\build\bootloader\esp-idf\esptool_py && D:\Espressif\python_env\idf5.0_py3.8_env\Scripts\python.exe D:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6710 bytes. 0x8f0 bytes (8%) free.
+ninja: build stopped: subcommand failed.

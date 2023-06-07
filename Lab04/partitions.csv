@@ -1,0 +1,9 @@
+# Name,Type,SubType,Offset,Size,Flags
+# Note: length of OTA_0 is 1.8MB & OTA_1 is 1.8MB
+
+nvs,      data, nvs,	,	32K,
+otadata,  data, ota,	,	8K,
+phy_init, data, phy,	,	1K,
+ota_0,    app,  ota_0,	,	1800K,
+ota_1,    app,  ota_1,	,	1800K,
+nvs_key,  data, nvs_keys,,	4K,

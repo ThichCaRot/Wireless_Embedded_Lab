@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/CMakeFiles/bootloader
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/CMakeFiles/bootloader.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/CMakeFiles/bootloader-complete.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Espressif/tools/espressif-ide/2.9.0/workspace/Lab04/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
